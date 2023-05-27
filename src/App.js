@@ -23,7 +23,7 @@ function App() {
     const parts = url.split('/');
     const domain = parts[2];
     const pathParts = parts.slice(3).map((part) => part.split('.')[0]);
-    const formattedURL = `${domain} > ${pathParts.join(' > ')}.html`;
+    const formattedURL = `${domain} > ${pathParts.join(' > ')}`;
     return formattedURL;
   }
 
