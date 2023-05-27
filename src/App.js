@@ -219,7 +219,7 @@ function App() {
             dataField="filetype"
             title="Filter by file type"
             fielddata={true}
-            size={10}
+            size={5}
             
           />
 
@@ -229,7 +229,7 @@ function App() {
             dataField="baseurl"
             title="Filter by Baseurl"
             fielddata={true}
-            size={10}
+            size={5}
             
           />
           
