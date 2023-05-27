@@ -19,6 +19,13 @@ function App() {
   const [exactMatch, setExactMatch] = useState(false);
   const [phraseMatch, setPhraseMatch] = useState(false);
 
+  function generateLinkString(url) {
+    const parts = url.split('/');
+    const domain = parts[2];
+    const pathParts = parts.slice(3).map((part) => part.split('.')[0]);
+    const formattedURL = `${domain} > ${pathParts.join(' > ')}.html`;
+    return formattedURL;
+  }
 
   const handleExactMatchChange = (event) => {
     setExactMatch(event.target.checked);
@@ -232,15 +239,15 @@ function App() {
             dataField="filesize"
             title="Filter by File Size"
             data={[
-              { start: 1, end: 500, label: "Less Than 5Kb" },
-              { start: 500, end: 1000, label: "5Kb to 10Kb" },
-              { start: 1000, end: 50000, label: "10Kb to 50Kb" },
-              { start: 50000, end: 100000000, label: "Bigger than 50Kb" },
+              { start: 1000000, end: 2000000, label: "1Mb to 2Mb" },
+              { start: 2000001, end: 5000000, label: "2Mb to 5Mb" },
+              { start: 5000001, end: 10000000, label: "5Mb to 10Mb" },
+              { start: 10000001, end: 5000000000, label: "Bigger than 10Mb" },
               
             ]}
             defaultValue=""
           />
-
+ 
 
             {/* <SingleList
             componentId="baseurlfilter"
@@ -303,6 +310,10 @@ function App() {
               
               <ReactiveList.ResultListWrapper>
                 {data.map((item) => {
+
+                  let urlnew=generateLinkString(item.url)
+                  console.log(urlnew,'urlnew');
+
                   //console.log(item)
                 if(item.filetype==="image"){
                 
@@ -343,7 +354,9 @@ function App() {
                         dangerouslySetInnerHTML={{
                           __html: item.title?item.title:"No Title Found"
                         }}
-                      /></a>
+                      />
+                      <p style={{textDecoration:"none", color:"#4d5156",fontWeight: "bold"}}>{urlnew}</p>
+                      </a>
                       <ResultList.Description>
                         {item.filedetails.substring(0, 250)}
                       </ResultList.Description>
