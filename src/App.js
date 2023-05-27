@@ -124,7 +124,7 @@ function App() {
                         }
                       }
                     ],
-                    "minimum_should_match": "1"
+                    "minimum_should_match": "4"
                   }
                 }
               ]
@@ -276,7 +276,7 @@ function App() {
             style={{
               marginTop: "35px"
             }}
-
+          debounce={500}
           showVoiceSearch={true}
            customQuery={customQueryfn}
             fuzziness={fuzzinessval}
