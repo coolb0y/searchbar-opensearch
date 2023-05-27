@@ -355,7 +355,7 @@ function App() {
                           __html: item.title?item.title:"No Title Found"
                         }}
                       />
-                      <p style={{textDecoration:"none", color:"#4d5156",fontWeight: "bold"}}>{urlnew}</p>
+                      <p style={{textDecoration:"none", color:"#989898",fontWeight: "bold"}}>{urlnew}</p>
                       </a>
                       <ResultList.Description>
                         {item.filedetails.substring(0, 250)}
