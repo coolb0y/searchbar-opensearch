@@ -124,7 +124,7 @@ function App() {
                         }
                       }
                     ],
-                    "minimum_should_match": "4"
+                    "minimum_should_match": "1"
                   }
                 }
               ]
@@ -146,7 +146,7 @@ function App() {
 
     
     <ReactiveBase
-      url="http://admin:admin@127.0.0.1:9200"
+      url="http://admin:admin@127.0.0.1:7777"
       app="test5"
       credentials="admin:admin"
       enableAppbase={false}
