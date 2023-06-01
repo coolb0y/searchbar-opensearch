@@ -103,8 +103,9 @@ function App() {
                         "multi_match": {
                           "query": value,
                           "fields": ["title^7", "filedetails^4", "artists^3", "album^2", "imgtags^1"],
-                          "type": "cross_fields",
+                          "type": "best_fields",
                           "operator": queryFormatval,
+                          "fuzziness": "AUTO",
                         }
                       },
                       {
@@ -117,14 +118,14 @@ function App() {
                       },
                       {
                         "multi_match": {
-                          "query": "africa music",
+                          "query": value,
                           "fields": ["title^7", "filedetails^4", "artists^3", "album^2", "imgtags^1"],
                           "type": "phrase_prefix",
                           "operator": queryFormatval
                         }
                       }
                     ],
-                    "minimum_should_match": "1"
+                    "minimum_should_match": 0
                   }
                 }
               ]
@@ -147,7 +148,7 @@ function App() {
     
     <ReactiveBase
       url="http://admin:admin@127.0.0.1:9200"
-      app={indexname}
+      app={indexname?indexname:"test5"}
       credentials="admin:admin"
       enableAppbase={false}
       
