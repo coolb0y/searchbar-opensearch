@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 
 function App() {
-
+  const indexname = process.env.REACT_APP_INDEX_NAME;
   const [fuzzinessval,setFuzzinessval]=useState(2);
   const [queryFormatval,setQueryFormatval]=useState("or");
   const [exactMatch, setExactMatch] = useState(false);
@@ -146,8 +146,8 @@ function App() {
 
     
     <ReactiveBase
-      url="http://admin:admin@127.0.0.1:7777"
-      app="test5"
+      url="http://admin:admin@127.0.0.1:9200"
+      app={indexname}
       credentials="admin:admin"
       enableAppbase={false}
       
