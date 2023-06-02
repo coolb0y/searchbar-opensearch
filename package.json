@@ -1,7 +1,7 @@
 {
   "name": "videoserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js is an open-source, cross-platform, JavaScript runtime environment.",
   "main": "src/index.js",
   "scripts": {
     "start": "cross-env BROWSER=none react-scripts start",
@@ -27,5 +27,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolb0y/searchbar-opensearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coolb0y/searchbar-opensearch/issues"
+  },
+  "homepage": "https://github.com/coolb0y/searchbar-opensearch#readme"
 }
