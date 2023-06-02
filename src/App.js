@@ -148,7 +148,7 @@ function App() {
     
     <ReactiveBase
       url="http://admin:admin@127.0.0.1:9200"
-      app={indexname?indexname:"test5"}
+      app={indexname?indexname:"chipsterIndex"}
       credentials="admin:admin"
       enableAppbase={false}
       
